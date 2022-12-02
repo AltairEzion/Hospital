@@ -325,7 +325,7 @@
                                 echo '</span>
                                 </a>
                                 ';}
-                            if( $count == 3){
+                            if( $count == 2){
                                 $rno = $iN[2];
                                 $ainfo = mysqli_query($con,"SELECT * FROM room WHERE roomNo = $rno"); //query row that have selected patientNo
                                 $acolName = mysqli_query($con,"SHOW COLUMNS FROM room"); //get column name from patients table
