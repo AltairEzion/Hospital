@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+    <html>
+        <header>
+            <title>Contact</title>
+
+        <!-- Bootstrap-->
+         <!-- CSS only -->
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+         <!-- JavaScript Bundle with Popper -->
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+        
+        </header>
+        <style>
+
+        ul {
+            list-style-type: none; /*remove the bullets*/
+            /*remove browser defualt settings*/
+            margin: 0; 
+            padding: 0;
+            overflow: hidden;
+            background-color: #2D3648;
+            /*fix the nav bar to the top*/
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
+        li a {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 30px;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 25px;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #29303f;
+            color: rgb(230, 230, 230);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .nav_bar{
+            
+            position: fixed;
+            z-index: 1;
+        }
+        
+        
+        .backgroud{
+            background-color: #29303f;
+        }
+
+        body, html {
+                height: 100%;
+                margin: 0;
+                font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1{
+            color: #29303f;
+            padding: 14px 30px;
+            margin-top: 100px
+        }
+
+        /* MAP */
+
+        .responsive-map{
+            overflow: hidden;
+            padding-bottom:56.25%;
+            position:relative;
+            height:0;
+            }
+            .responsive-map iframe{
+            left:0;
+            top:0;
+            height:100%;
+            width:100%;
+            position:absolute;
+        }
+
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+        }
+
+        /* Details */
+
+        .default
+        {
+            color: #29303f;
+            text-align: left;
+            display: table-cell;
+            padding: 14px 30px;
+
+        }
+
+        /* Footer */
+        .credits{
+
+            list-style-type: none; /*remove the bullets*/
+            /*remove browser defualt settings*/
+            margin: 0; 
+            padding: 14px 30px;
+            overflow: hidden;
+            background-color: #2D3648;
+            text-align: left;
+            color: white;
+
+
+
+            font-family: Arial, Helvetica, sans-serif;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* limited scrolling */
+
+        div {
+            overflow: hidden;
+        
+        }
+
+
+        </style>
+        <body>
+
+     <!-- Navigation -->
+
+        <ul class="nav_bar">
+
+            <li style="float:left; font-size: 40px; font-family: Copperplate, Papyrus, fantasy;"><a href="index.html" style="font-size: 40px; font-family: Copperplate, Papyrus, fantasy;">Jaewhon+ Hospital</a></li>
+            <li style="float:right;"><a href="login.html"><u>Login</u></a></li>
+            <li style="float:right;"><a href="contact.html">Contact</a></li>
+            <li style="float:right;"><a href="about.html">About Us</a></li>
+            
+        </ul>
+
+    <!-- Contact -->
+
+        <h1>Contact</h1>
+
+        <div class="responsive-map center">
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.5516500895924!2d100.56261605047156!3d13.745572801093651!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29ee109dab6e1%3A0xfd15aa1c632d9677!2sSrinakharinwirot%20University!5e0!3m2!1sen!2sth!4v1669264227375!5m2!1sen!2sth" 
+            width=”600” height=”450” frameborder=”0” style="border:0;"; 
+            allowfullscreen="" loading="lazy"></iframe>
+
+        </div>
+
+        <br>
+
+        <table border="1" bordercolor="#2D3648" align="center" width="80%" border-radius="4px">
+            <tr>
+                <td class="default" width="80">
+                    <b>Address:</b> 114 Soi Sukhumvit 23, Khlong Toei Nuea, Watthana, Bangkok 10110 <br>
+                    <b>Tel:</b> 086-xxxxxx, 086-xxxxxx, 086-xxxxxx <br>
+                    <b>E-mail:</b> ForReal@jaewhon.com, Nopparat@jaewhon.com
+                </td>
+                
+            </tr>
+        
+    <!-- invisible table for design purpose -->
+        <table border="1" align="center" opacity="0%" width="10%" height="80" border-radius="4px">
+    
+
+     <!-- Footer -->
+
+        <div class="credits footer">
+            <div class="row">
+                <div class="column" style="text-align:right;">
+                    <a href="policy.html" style="text-decoration: none; color: inherit;"><u>Terms and Policy</u></a>
+                </div>
+            </ul>
+            
+        </div>
+
+
+
+        </body>
+    </html>
