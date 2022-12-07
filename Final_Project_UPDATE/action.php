@@ -31,33 +31,44 @@ if(isset($_POST['uname'])){
 if(isset($_POST['getroom'])){
     $patno = $_POST['patNo'];
     $roomno = $_POST['roomNo'];
-    $stD = $_POST['admission'];
-    $endD = $_POST['discharge'];
+    $stD = $_POST['admission']; 
+    $endD = $_POST['discharge']; 
 
     //check length of booking
     if($stD >= $endD){
         echo "Error! please make sure <b>Booking date</b> is more than 1 day and not negative.";
         //echo $stD - $endD;
-        header( "refresh:2;url= /wellhospital/Final_Project_UPDATE/room.php" );
+        header( "refresh:2;url= /wellhospital/Final_Project_UPDATE/rroom.php" );
         return;
     }
+    $n = $stD;
+    $TstD = date_create($stD);
+    $TendD = date_create($endD);
     
-    $dif = round((strtotime($endD) - strtotime($stdD)) / (60 * 60 * 24));
-    $count = 0; $n = $stD;
+    //$dif = round((strtotime($endD) - strtotime($stdD)) / (60 * 60 * 24));
+    $dif =  date_diff($TstD,$TendD);
+    $count = 0; 
     console_log($count);
-    while($count<$dif){
-        $n = date("Y-m-d", strtotime($n. ' + 1 days'));
-        $check = mysqli_query($con, "SELECT * FROM track WHERE (roomNo = $roomno AND (checkIn = $n OR checkOut = $n))");
-        console_log($n);
-        if(mysqli_fetch_array($check) == null){
+    $dif = $dif->format("%a");
+    console_log($dif);
+    while($count<$dif){console_log($count);
+        $n = date("Y-m-d", strtotime($n. ' + 1 days')); 
+        $sqlQ = "SELECT * FROM track WHERE (roomNo = $roomno AND (checkIn = $n OR checkOut = $n))";
+        console_log($sqlQ);
+        $check = mysqli_query($con, $sqlQ);
+        console_log($sqlQ);
+       
+        if(mysqli_num_rows($check) == 0){ 
             echo "This room has already been allocated at that period of time.<br>
             Please select other room or change the days.";
             header( "refresh:3;url= /wellhospital/Final_Project_UPDATE/rroom.php" );
             return; //just make sure not to contunue inserting to the DB
         }
+        echo 'pass'.$count.'  \  ';
 
         $count+=1;
     }
+    console_log('end loop');
 
 
 
@@ -71,7 +82,7 @@ if(isset($_POST['getroom'])){
         $t = mysqli_fetch_array($trackLine); $idNum+=1;
     }
  
-
+    console_log('prepare insert');
     //insert value
     $sql = "INSERT INTO track (trackId,patientId,roomNo,checkIn,checkOut) VALUES ('$idNum','$patno','$roomno','$stD','$endD')";
     console_log($sql);
