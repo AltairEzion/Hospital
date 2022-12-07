@@ -22,7 +22,7 @@ if(isset($_POST['uname'])){
         header( "refresh:1;url= /wellhospital/Final_Project_UPDATE/login.php" );
     } else{
         echo "hi admin";  //dont need
-        header("Location: /wellhospital/Final_Project_UPDATE/room.php");
+        header("Location: /wellhospital/Final_Project_UPDATE/rroom.php");
     }
                     
 }
@@ -52,7 +52,7 @@ if(isset($_POST['getroom'])){
         if(mysqli_fetch_array($check) == null){
             echo "This room has already been allocated at that period of time.<br>
             Please select other room or change the days.";
-            header( "refresh:3;url= /wellhospital/Final_Project_UPDATE/room.php" );
+            header( "refresh:3;url= /wellhospital/Final_Project_UPDATE/rroom.php" );
             return; //just make sure not to contunue inserting to the DB
         }
 
@@ -77,7 +77,7 @@ if(isset($_POST['getroom'])){
     console_log($sql);
     mysqli_query($con,$sql);
     echo 'success';
-    header( "refresh:2;url= /wellhospital/Final_Project_UPDATE/room.php" );
+    header( "refresh:2;url= /wellhospital/Final_Project_UPDATE/rroom.php" );
 }
 
 
@@ -107,7 +107,7 @@ if(isset($_POST['reg'])){
     console_log($sql);
     mysqli_query($con,$sql);
     echo 'success';
-    header( "refresh:2;url= /wellhospital/Final_Project_UPDATE/room.php" );
+    header( "refresh:2;url= /wellhospital/Final_Project_UPDATE/rroom.php" );
 }
 
 
