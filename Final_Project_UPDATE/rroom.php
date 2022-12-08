@@ -296,12 +296,12 @@
 
               </form>
 
-
-
+        
+                    <br><br>
               <form action="" method="post">
-                <label for="admission_date" class="row">Check Availability in this month&nbsp;&nbsp;</label>
-                
-                <?php
+                <label for="admission_date" class="row" style="margin-left:42.5%;">Check Availability in this month&nbsp;&nbsp;</label>
+                <br>
+                <div style="margin-left:42.5%;"><?php
                     include_once('connect.php');
                     //room
                     $dRoom = mysqli_query($con,"SELECT roomNo FROM room"); 
@@ -360,7 +360,7 @@
                             while( $ccount > 0){
                                 $ccount1 = $different[$ccount];
                                 while ($ccount1 >= 0){
-                                    array_push($allocated, $startList[$ccount]+$ccount1);
+                                    array_push($allocated, $startList[$ccount]+$ccount1);  //echo '<br> current: '. $startList[$ccount]+$ccount1 . '|';
                                     //print_r($allocated); echo '<br>';
                                     $ccount1--;
                                 }
@@ -394,7 +394,7 @@
                     }
 
                     
-                    ?>
+                    ?></div>
 
 
               </form>
@@ -431,7 +431,7 @@
             
 
             <a href="./register.php">
-            <button class="btn-regis" style="bottom: 10%; margin-left:50; margin-left:55px;position: fixed;">
+            <button class="btn-regis" style="margin-left:17.5%;">
                 Register
             </button>
             </a>
