@@ -64,7 +64,7 @@ if(isset($_POST['getroom'])){
             header( "refresh:3;url= /wellhospital/Final_Project_UPDATE/rroom.php" );
             return; //just make sure not to contunue inserting to the DB
         }
-        echo 'pass'.$count.'  \  ';
+        //echo 'pass'.$count.'  \  ';
 
         $count+=1;
     }
